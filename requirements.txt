@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+databases
+asyncpg
+bcrypt
+pydantic
+python-jose
+pydantic[email]
