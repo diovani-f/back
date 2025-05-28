@@ -40,7 +40,8 @@ class LoginData(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
-    nome: str  # Nome do usuário retornado no login
+    id: int        # ID do usuário
+    nome: str      # Nome do usuário
 
 # Eventos de conexão com o banco
 @router.on_event("startup")
@@ -71,5 +72,6 @@ async def login(data: LoginData):
     return {
         "access_token": encoded_jwt,
         "token_type": "bearer",
+        "id": usuario["id"],
         "nome": usuario["nome"]
     }
