@@ -85,7 +85,7 @@ async def shutdown():
     await database.disconnect()
 
 # Rota: Sorteio de pergunta
-@router.get("/quiz/pergunta", response_model=QuizOut)
+@router.get("/pergunta", response_model=QuizOut)
 async def sortear_pergunta(usuario_id: int = Depends(get_usuario_id)):
     query = """
         SELECT * FROM quiz
@@ -103,7 +103,7 @@ async def sortear_pergunta(usuario_id: int = Depends(get_usuario_id)):
     return pergunta
 
 # Rota: Responder pergunta
-@router.post("/quiz/responder")
+@router.post("/responder")
 async def responder_pergunta(
     dados: RespostaQuizIn,
     usuario_id: int = Depends(get_usuario_id)
