@@ -24,10 +24,10 @@ quiz = sqlalchemy.Table(
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column("pergunta", sqlalchemy.Text, nullable=False),
-    sqlalchemy.Column("resposta_a", sqlalchemy.Text, nullable=False),
-    sqlalchemy.Column("resposta_b", sqlalchemy.Text, nullable=False),
-    sqlalchemy.Column("resposta_c", sqlalchemy.Text, nullable=False),
-    sqlalchemy.Column("resposta_d", sqlalchemy.Text, nullable=False),
+    sqlalchemy.Column("alternativa_a", sqlalchemy.Text, nullable=False),
+    sqlalchemy.Column("alternativa_b", sqlalchemy.Text, nullable=False),
+    sqlalchemy.Column("alternativa_c", sqlalchemy.Text, nullable=False),
+    sqlalchemy.Column("alternativa_d", sqlalchemy.Text, nullable=False),
     sqlalchemy.Column("resposta_correta", sqlalchemy.String(length=1), nullable=False),
 )
 
@@ -48,10 +48,10 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 class QuizOut(BaseModel):
     id: int
     pergunta: str
-    resposta_a: str
-    resposta_b: str
-    resposta_c: str
-    resposta_d: str
+    alternativa_a: str
+    alternativa_b: str
+    alternativa_c: str
+    alternativa_d: str
     resposta_correta: str
 
 class AlternativaEnum(str, Enum):
