@@ -11,7 +11,7 @@ from enum import Enum
 router = APIRouter()
 
 # Configurações
-DATABASE_URL = "postgresql://diovani:Ji7huPzuwV9wxDTimf3TgXKrvIhH6e6X@dpg-d0qgcsjipnbc73ebvoeg-a.oregon-postgres.render.com:5432/jardimdb"
+DATABASE_URL = "postgresql://jardimdb_ivqn_user:yrlylv8SVjnihgHkai8EBTTlVh9EXva0@dpg-d1fvro6mcj7s73c6f50g-a.oregon-postgres.render.com/jardimdb_ivqn"
 SECRET_KEY = os.getenv("SECRET_KEY", "supersecret")
 ALGORITHM = "HS256"
 
